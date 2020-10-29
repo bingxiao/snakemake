@@ -869,9 +869,6 @@ def parse_config(args):
             for parser in parsers:
                 try:
                     v = parser(val)
-                    # make sure the interpretation is visually the same
-                    if str(v) != str(val):
-                        continue
                     # avoid accidental interpretation as function
                     if not callable(v):
                         break
